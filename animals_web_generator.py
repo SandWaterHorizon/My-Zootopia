@@ -20,75 +20,6 @@ def load_data(file_path):
 
 animals_data = load_data('animals_data.json')
 
-"""
-Name
-Diet
-The first location from the locations list
-Type
-
-
-Example output
-
-Name: American Foxhound
-Diet: Omnivore
-Location: North-America
-Type: Hound
-
-Name: Arctic Fox
-Diet: Carnivore
-Location: Eurasia
-Type: Mammal
-
-Name: Cross Fox
-Diet: Carnivore
-Location: North-America
-Type: mammal
-
-
-"""
-
-
-"""
-for animal_data in data:
-    print(f"Name: {animal_data['name']}")
-    print(f"Diet: {animal_data['characteristics']['diet']}")
-    
-    
-    
-
-output = ''  # define an empty string
-for animal_data in data:
-    # append information to each string
-    output += f"Name: {animal_data['name']}\n"
-    output += f"Diet: {animal_data['characteristics']['diet']}\n"
-    ...
-print(output)
-    
-"""
-
-
-
-
-test = {
-    "name": "American Foxhound",
-    "taxonomy": {
-      "kingdom": "Animalia",
-      "scientific_name": "Canis lupus"
-    },
-    "locations": [
-      "North-America"
-    ],
-    "characteristics": {
-      "diet": "Omnivore",
-      "type": "Hound",
-    }
-  },
-
-# print(test[0]['name'])
-# print(test[0]['locations'][0])
-# print(test[0]['characteristics']['diet'])
-# print(test[0]['characteristics']['type'])
-
 
 output = ''  # define an empty string
 for x in range(len(animals_data)):
@@ -101,18 +32,10 @@ for x in range(len(animals_data)):
     output += f"Diet: {diet}\n"
     output += f"Type: {type}\n"
 
-print(output)
-
-#
-# for animal_data in data:
-#     # append information to each string
-#     output += f"Name: {animal_data['name']}\n"
-#     output += f"Diet: {animal_data['characteristics']['diet']}\n"
-#     ...
 # print(output)
-#
+
 
 
 # Open a file in write mode
-with open("output_animals.html", "w") as file:
+with open("output.html", "w") as file:
     file.write(output)
