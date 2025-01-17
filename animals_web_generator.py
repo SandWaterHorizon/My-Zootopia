@@ -10,7 +10,11 @@ init()
 print(Fore.BLACK + Back.YELLOW + Style.BRIGHT)
 # ----- above for colors --------------------
 
+
+
+
 import json
+
 
 def load_data(file_path):
   """ Loads a JSON file """
@@ -18,12 +22,8 @@ def load_data(file_path):
     return json.load(handle)
 
 
-animals_data = load_data('animals_data.json')
-print(animals_data)
-
-
-output = ''  # define an empty string
-for x in range(len(animals_data)):
+def serialize_animal(animal_obj):
+    output = ''
     name = animals_data[x]['name']
 
     # print('type' in animals_data[x]['characteristics'].keys())
@@ -43,10 +43,15 @@ for x in range(len(animals_data)):
 
     output += f" </li>\n"
 
+    return output
 
-# print(output)
 
+animals_data = load_data('animals_data.json')
+# print(animals_data)
 
+output = ''  # define an empty string
+for x in range(len(animals_data)):
+    output += serialize_animal(animals_data)
 
 # Open a file in write mode
 with open("output.html", "w") as file:
