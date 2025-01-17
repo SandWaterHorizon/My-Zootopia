@@ -22,48 +22,29 @@ animals_data = load_data('animals_data.json')
 print(animals_data)
 
 
-# animals_data = {
-#     "name": "American Foxhound",
-#     "taxonomy": {
-#       "kingdom": "Animalia",
-#       "scientific_name": "Canis lupus"
-#     },
-#     "locations": [
-#       "North-America"
-#     ],
-#     "characteristics": {
-#       "diet": "Omnivore",
-#       "type": "Hound",
-#     },
-#
-#
-#   },
-
-
 output = ''  # define an empty string
 for x in range(len(animals_data)):
     name = animals_data[x]['name']
 
     # print('type' in animals_data[x]['characteristics'].keys())
 
-    output += f'<li class="cards__item">'
+    output += f'<li class="cards__item">\n'
+    output += f'<div class ="card__title" > {name} </div>\n'
 
-    # if 'name' in animals_data[x]['characteristics'].keys():
-    output +=  f"Name: {name}<br/>\n"
-    # if 'diet' in animals_data[x]['characteristics'].keys():
     diet = animals_data[x]['characteristics']['diet']
-    output += f"Diet: {diet}<br/>\n"
-    # if 'location' in animals_data[x]['characteristics'].keys():
+    output += f"<strong>Diet</strong>: {diet}<br/>\n"
+
     location = animals_data[x]['locations'][0]
-    output += f"Location: {location}<br/>\n"
+    output += f"<strong>Location</strong>: {location}<br/>\n"
+
     if 'type' in animals_data[x]['characteristics'].keys() :
         type = animals_data[x]['characteristics']['type']
-        output += f"<b>Type</b>: {type}<br/>\n"
+        output += f"<strong>Type</strong>: {type}<br/>\n"
 
     output += f" </li>\n"
 
 
-print(output)
+# print(output)
 
 
 
